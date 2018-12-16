@@ -18,14 +18,11 @@ function lat(address, city) {
     })
 }
 
-
 router.get('/', (req, res) => {
     Controller.getEvents().then((events) =>
         events.forEach(event => lat(event.address, event.city))
     )
     res.json(geoobj)
 })
-
-
 
 module.exports = router

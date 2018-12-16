@@ -8,17 +8,17 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     console.log(req.body)
-    const { description, date, time, address, city, organizer} = req.body
+    const { description, date, time, address, city, organizer } = req.body
     Controller
-      .addEvents(description, date, time, address, city, organizer )
-      .then(event => res.json(event))
-  })
+        .addEvents(description, date, time, address, city, organizer)
+        .then(event => res.json(event))
+})
 
-  router.delete('/', (req, res) => {
+router.delete('/', (req, res) => {
     Controller
-      .deleteEvent(req.body.id)
-      .then(todo => res.json(todo))
-  })
+        .deleteEvent(req.body.id)
+        .then(todo => res.json(todo))
+})
 
 
 module.exports = router

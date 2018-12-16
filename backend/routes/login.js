@@ -4,8 +4,6 @@ const passport = require('passport');
 const Controller = require('../controllers/events')
 let userObject
 
-
-
 router.get('/', (req, res) => {
   console.log('trigger')
    res.json(userObject)

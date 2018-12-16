@@ -10,13 +10,11 @@ router.get('/', (req, res) => {
 
 router.put('/', (req, res) => {
     if (req.body.attribute === "bio") {
-        Controller.updateUserBio(req.body, req.body.id).then(user => res.json(user))}
+        Controller.updateUserBio(req.body, req.body.id).then(user => res.json(user))
+    }
     else {
         Controller.updateUserInterests(req.body, req.body.id).then(user => res.json(user))
     }
-   
-}
-
-)
+})
 
 module.exports = router
