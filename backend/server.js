@@ -36,13 +36,8 @@ Controller.getUser().then(user =>
 
 passport.use(new LocalStrategy(
   (email, password, done) => {
-    console.log('Inside local strategy callback')
-    // here is where you make a call to the database
-    // to find the user based on their username or email address
-    // for now, we'll just pretend we found that it was users[0]
     for (let i =0; i <users.length; i++) {
       if(email === users[i].username && password === users[i].password) {
-        console.log('Local strategy returned true')
         return done(null, users[i])
       }
     }
@@ -50,14 +45,11 @@ passport.use(new LocalStrategy(
   }
 ))
 passport.serializeUser((user, done) => {
-  console.log('Inside serializeUser callback. User id is save to the session file store here')
   done(null, user.id);
 });
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-
 app.use('/login', UserRouter)
 app.use('/home', HomeRouter)
 app.use('/users', getUsersRouter)
