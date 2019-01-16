@@ -4,7 +4,6 @@ const passport = require('passport');
 let userObject
 
 router.get('/', (req, res) => {
-  console.log('trigger')
    res.json(userObject)
    })
 
