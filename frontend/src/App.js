@@ -36,7 +36,6 @@ class App extends Component {
   componentDidMount = () => {
     axios.get('http://localhost:8080/users').then(
       (res) => {
-        console.log(res)
         this.setState({
           users: res.data,
           loadingUsers: false
@@ -104,7 +103,6 @@ class App extends Component {
   getMarkers = () => {
     axios.get('http://localhost:8080/markers').then(
       (res) => {
-        console.log(res)
         this.setState({
           markers: res.data
         })
@@ -139,7 +137,6 @@ class App extends Component {
     return (
       <div className="App">
 
-
         <Switch>
           <Route exact path="/" render={() => <Login redirect={this.state.redirect} />} />
           <Route exact path="/home" render={() => <Home loading={this.state.loadingHome} updateEvents={this.updateEvents} getMarkers={this.getMarkers} events={this.state.events} user={this.state.user} />} />
@@ -150,7 +147,6 @@ class App extends Component {
           <Route path="/community" render={() => <Users users={this.state.users} />} loadingUsers={this.state.loadingUsers} />
           <Route path="/saved" render={() => <Save saved= {this.state.saved} loading= {this.state.loadingsavedEvents} />} />
         </Switch>
-
 
       </div>
     );
