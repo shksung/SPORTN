@@ -7,9 +7,7 @@ export default class ControlPanel extends PureComponent {
     const Container = this.props.containerComponent || defaultContainer;
 
     return (
-      <Container>
-       
-        
+      <Container>   
         <p> <a href="https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population"></a></p>
         <div className="source-link">
           <a href="https://github.com/uber/react-map-gl/tree/4.0-release/examples/controls" target="_new"></a>

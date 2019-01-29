@@ -34,7 +34,6 @@ class Events extends Component {
 
         }
 
-
         return (
 
             <div className="center">

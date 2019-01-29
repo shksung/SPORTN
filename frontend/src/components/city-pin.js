@@ -10,10 +10,8 @@ const pinStyle = {
 };
 
 export default class CityPin extends PureComponent {
-
   render() {
     const {size = 20, onClick} = this.props;
-
     return (
       <svg 
         height={size}

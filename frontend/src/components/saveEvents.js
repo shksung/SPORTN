@@ -7,7 +7,6 @@ class Save extends Component {
         let events
         if (this.props.loading === false) {
             events = this.props.saved.map(event => <a className="list-group-item list-group-item-action list-group-item-warning"><Link to={"/home/" + String(event.id)}>{event.description}</Link></a>)
-            console.log(events)
         }
         return (
                 <div>

@@ -56,7 +56,6 @@ class Home extends Component {
     getMarkers = () => {
         axios.get('http://localhost:8080/markers').then(
             (res) => {
-                console.log(res)
                 this.setState({
                     markers: res.data
                 })

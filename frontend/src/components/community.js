@@ -59,8 +59,6 @@ class Community extends Component {
         );
     }
 
-
-
     render() {
         const { viewport } = this.state;
         return (
